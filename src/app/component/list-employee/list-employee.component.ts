@@ -11,6 +11,9 @@ export class ListEmployeeComponent implements OnInit {
 
   employees: any;
 
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'emailId'];
+
+
   constructor(private employeeSvc: EmployeeService) { }
 
   ngOnInit(): void {
