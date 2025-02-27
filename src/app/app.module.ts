@@ -8,6 +8,13 @@ import { FileUploadComponent } from './component/file-upload/file-upload.compone
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryComponent } from './component/gallery/gallery.component';
 import { SimplegalleryComponent } from './component/simplegallery/simplegallery.component';
+import { CreateEmployeeComponent } from './component/create-employee/create-employee.component';
+import { ListEmployeeComponent } from './component/list-employee/list-employee.component';
+import { UpdateEmployeeComponent } from './component/update-employee/update-employee.component';
+import { DetailsEmployeeComponent } from './component/details-employee/details-employee.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule } from './module/material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,15 +22,22 @@ import { SimplegalleryComponent } from './component/simplegallery/simplegallery.
     ExampleComponent,
     FileUploadComponent,
     GalleryComponent,
-    SimplegalleryComponent
+    SimplegalleryComponent,
+    CreateEmployeeComponent,
+    ListEmployeeComponent,
+    UpdateEmployeeComponent,
+    DetailsEmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })
