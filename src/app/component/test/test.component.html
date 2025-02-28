@@ -1,1 +1,7 @@
 <p>test works!</p>
+
+<div>
+    <select name="countries" placeholdr="--Select--">
+        <option *ngFor="let item of data" [value]="item.code">{{item.name}}</option>
+    </select>
+</div>

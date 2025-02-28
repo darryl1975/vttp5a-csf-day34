@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as jsonData from '../../../assets/countries.json';
+import jsonData from '../../../assets/countries.json';
 
 @Component({
   selector: 'app-test',
