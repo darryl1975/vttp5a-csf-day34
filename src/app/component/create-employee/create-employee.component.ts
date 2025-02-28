@@ -3,6 +3,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { EmployeeService } from '../../service/employee.service';
 import { NodeWithI18n } from '@angular/compiler';
 import { Employee } from '../../model/employee';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-create-employee',
@@ -13,7 +15,7 @@ export class CreateEmployeeComponent implements OnInit {
   form!: FormGroup;
   employee!: Employee;
 
-  constructor(private employeeSvc: EmployeeService) { }
+  constructor(private employeeSvc: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -30,6 +32,8 @@ export class CreateEmployeeComponent implements OnInit {
     console.log(this.employee);
 
     this.saveEmployee();
+
+    this.router.navigate(['/employeeList']);
   }
 
   saveEmployee() {
