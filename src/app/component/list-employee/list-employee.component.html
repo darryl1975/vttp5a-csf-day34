@@ -21,7 +21,7 @@
                     <td>{{employee.lastName}}</td>
                     <td>{{employee.emailId}}</td>
                     <td>
-                        <button class="btn btn-info">Details</button>
+                        <button class="btn btn-info" (click)="displayEmployee(employee.id)">Details</button>
                         &nbsp; &nbsp; &nbsp;
                         <button class="btn btn-warning" (click)="updateEmployee(employee.id)">Update</button>
                         &nbsp; &nbsp; &nbsp;

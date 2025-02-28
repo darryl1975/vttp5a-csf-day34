@@ -15,6 +15,9 @@ import { DetailsEmployeeComponent } from './component/details-employee/details-e
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MaterialModule } from './module/material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouteGuardService } from './service/route-guard.service';
+import { DeactivateGuardService } from './service/deactivate-guard.service';
+import { TestComponent } from './component/test/test.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CreateEmployeeComponent,
     ListEmployeeComponent,
     UpdateEmployeeComponent,
-    DetailsEmployeeComponent
+    DetailsEmployeeComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   providers: [
     provideClientHydration(),
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    RouteGuardService,
+    DeactivateGuardService
   ],
   bootstrap: [AppComponent]
 })

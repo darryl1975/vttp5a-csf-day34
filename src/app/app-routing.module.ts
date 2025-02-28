@@ -8,16 +8,20 @@ import { FileUploadComponent } from './component/file-upload/file-upload.compone
 import { GalleryComponent } from './component/gallery/gallery.component';
 import { SimplegalleryComponent } from './component/simplegallery/simplegallery.component';
 import { UpdateEmployeeComponent } from './component/update-employee/update-employee.component';
+import { RouteGuardService } from './service/route-guard.service';
+import { TestComponent } from './component/test/test.component';
+import { DeactivateGuardService } from './service/deactivate-guard.service';
 
 const routes: Routes = [
   {path: 'employeeList', component: ListEmployeeComponent},
   {path: 'employeeCreate', component: CreateEmployeeComponent},
   {path: 'employeeDetails/:id', component: DetailsEmployeeComponent},
-  {path: 'employeeUpdate/:id', component: UpdateEmployeeComponent},
+  {path: 'employeeUpdate/:id', component: UpdateEmployeeComponent, canActivate: [RouteGuardService]},
   {path: 'example', component: ExampleComponent},
   {path: 'fileupload', component: FileUploadComponent},
   {path: 'gallery', component: GalleryComponent},
   {path: 'simplegallery', component: SimplegalleryComponent},
+  {path: 'test', component: TestComponent, canDeactivate: [DeactivateGuardService]},
   {path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
