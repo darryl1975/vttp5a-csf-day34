@@ -17,4 +17,9 @@ export class TestComponent {
       return false;
     }
   }
+
+  onChange(event: any) {
+    console.log(event);
+  }
+
 }

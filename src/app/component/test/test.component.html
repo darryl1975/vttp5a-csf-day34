@@ -1,7 +1,7 @@
 <p>test works!</p>
 
 <div>
-    <select name="countries" placeholdr="--Select--">
+    <select name="countries" placeholder="--Select--" (selected)="onChange($event)">
         <option *ngFor="let item of data" [value]="item.code">{{item.name}}</option>
     </select>
 </div>
